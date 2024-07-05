@@ -45,17 +45,48 @@ async function scrapeFIDC() {
     console.log('Clicando na aba Participantes...');
     await page.click('li[data-target="#tabPanelVisualizarParticipante"]');
 
-    // Extrai o nome e email do responsável
-    const details = await page.evaluate(() => {
-      const nomeElement = Array.from(document.querySelectorAll('label')).find(el => el.innerText.includes('Nome:')).nextElementSibling.querySelector('p.form-control-static');
-      const emailElements = Array.from(document.querySelectorAll('p.form-control-static.ng-binding.ng-scope')).filter(el => el.title === 'E-mail(s)');
-      const nome = nomeElement ? nomeElement.innerText : 'N/A';
-      const emails = emailElements.length > 0 ? emailElements.map(el => el.innerText) : ['N/A'];
-      return { nome, emails };
-    });
+    // Função para extrair o texto dos campos desejados
+    const extractDetails = async () => {
+      return await page.evaluate(() => {
+        const getTextByTitle = (title) => {
+          const element = document.querySelector(`p.form-control-static[title="${title}"]`);
+          return element ? element.innerText : 'N/A';
+        };
 
-    console.log(`Responsável: ${details.nome}`);
+        const getTextById = (id) => {
+          const element = document.querySelector(`#${id}`);
+          return element ? element.value : 'N/A';
+        };
+
+        const getEmails = () => {
+          const emailElements = document.querySelectorAll('p.form-control-static[title="E-mail(s)"]');
+          return emailElements.length > 0 ? Array.from(emailElements).map(el => el.innerText) : ['N/A'];
+        };
+
+        const getPhones = () => {
+          const phoneElements = document.querySelectorAll('p.form-control-static[title="Telefone(s)"], p.form-control-static[title="Fax"]');
+          return phoneElements.length > 0 ? Array.from(phoneElements).map(el => el.innerText) : ['N/A'];
+        };
+
+        return {
+          nome: getTextByTitle('Nome'),
+          responsavel: getTextById('txtDiretorResponsavelFundo'),
+          emails: getEmails(),
+          telefones: getPhones()
+        };
+      });
+    };
+
+    // Tentar extrair detalhes até que todos sejam capturados corretamente
+    let details = {};
+    do {
+      details = await extractDetails();
+    } while (details.nome === 'N/A' || details.emails.includes('N/A'));
+
+    console.log(`Nome: ${details.nome}`);
+    console.log(`Responsável: ${details.responsavel}`);
     console.log(`Emails: ${details.emails.join(', ')}`);
+    console.log(`Telefones: ${details.telefones.join(', ')}`);
 
     // Salva os detalhes em um arquivo
     fs.writeFileSync('fundos_details.json', JSON.stringify(details, null, 2));
