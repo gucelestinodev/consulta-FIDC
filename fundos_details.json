@@ -1,14 +1,84 @@
-{
-  "nome": "TIVIO CAPITAL DISTRIBUIDORA DE T═TULOS E VALORES MOBILIARIOS S.A.",
-  "responsavel": "GUSTAVO SAMI BARROSO ISTAMATI",
-  "emails": [
-    "vam-cvm@vam.com.br"
-  ],
-  "telefones": [
-    "(11) 5171-5003",
-    "(11) 5171-5003",
-    "(11) 5171-5003",
-    "(11) 5171-5057",
-    "(11) 5171-5057"
-  ]
-}
+[
+  {
+    "nome": "TIVIO CAPITAL DISTRIBUIDORA DE T═TULOS E VALORES MOBILIARIOS S.A.",
+    "responsavel": "",
+    "emails": [
+      "vam-cvm@vam.com.br"
+    ],
+    "telefones": [
+      "(11) 5171-5003",
+      "(11) 5171-5003",
+      "(11) 5171-5003",
+      "(11) 5171-5057",
+      "(11) 5171-5057"
+    ]
+  },
+  {
+    "nome": "FINAXIS CORRETORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.",
+    "responsavel": "",
+    "emails": [
+      "atendimento.regulatorio@finaxis.com.br"
+    ],
+    "telefones": [
+      "(11) 3526-9001",
+      "(11) 3526-9001",
+      "(11) 3526-9001",
+      "(11) 3526-9001",
+      "(11) 3526-9001",
+      "(11) 3526-9001"
+    ]
+  },
+  {
+    "nome": "RJI CORRETORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA.",
+    "responsavel": "",
+    "emails": [
+      "controladoria@rjicv.com.br"
+    ],
+    "telefones": [
+      "(21) 4500-3500",
+      "(21) 3500-4500"
+    ]
+  },
+  {
+    "nome": "BEM - DISTRIBUIDORA DE TITULOS E VALORES MOBILIARIOS LTDA.",
+    "responsavel": "",
+    "emails": [
+      "gervasio.oliveira@bradesco.com.br",
+      "bemdtvm@bradesco.com.br",
+      "cristiano.climaco@bradesco.com.br",
+      "dac.admfid@bradesco.com.br"
+    ],
+    "telefones": [
+      "(11) 3684-4522",
+      "(11) 3684-4522",
+      "(11) 3684-4522",
+      "(11) 3684-5645",
+      "(11) 3684-5645"
+    ]
+  },
+  {
+    "nome": "SINGULARE CORRETORA DE TITULOS E VALORES MOBILIARIOS S.A.",
+    "responsavel": "",
+    "emails": [
+      "compliance@singulare.com.br",
+      "controlesinternos@singulare.com.br"
+    ],
+    "telefones": [
+      "(11) 2827-3500",
+      "(11) 2827-3500",
+      "(11) 2827-3821"
+    ]
+  },
+  {
+    "nome": "HEMERA DISTRIBUIDORA DE TITULOS E VALORES MOBILIARIOS LTDA",
+    "responsavel": "",
+    "emails": [
+      "compliance@hemeradtvm.com.br",
+      "COMPLIANCE@HEMERADTVM.COM.BR",
+      "atendimentocvm@hemeradtvm.com.br"
+    ],
+    "telefones": [
+      "(41) 3122-7300"
+    ]
+  }
+]
